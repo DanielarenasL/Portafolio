@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://i.postimg.cc/X797m23Y/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.navbar {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 21em;
+    height: 40px;
+    padding: 0 20px;
+    margin: 20px;
+    top: 0;
+    background-color: rgb(101, 30, 107);
+    border-radius: 15px;
+}
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    font: small-caption;
+    cursor: pointer;
+    color: white;
+    width: 70px;
+    height: 30px;
+    
+}
+button:hover {
+    transform: scale(1.1);
+    color: rgb(26, 123, 136);
+}
+.about{
+    display: flex;
+    width: 55em;
+    height: 26em;
+    margin: 40px;
+}
+.imagen {
+    display: flex;
+    margin: 60px;
+    height: 20em;
+    align-items: center;
+}
+.img {
+    cursor: pointer;
+    width: 13em;
+    height: 13em;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 2px #fff;
+    transition: all 0.3s;
+}
+.img:hover {
+    box-shadow: 0 0 5px 5px pink;
+}
+.presentation {
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px 10px;
+    color: white;
+    width: 30em;
+    height: 20em;
+    
+}
+.presentation h1{
+    display: flex;
+    margin: 40px;
+    justify-content: center;
+}
+.presentation p{
+    font-size: large;
+    justify-content: center;
+}
+.portafolio{
+    display: flex;
+    background-color: black;
+    border-radius: 13px;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.portafolio h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.portafolio h2 {
+    display: flex;
+    justify-content: left;
+    color: white;
+    margin-left: 70px;
+    margin-top: 20px;
+    font-size: 30px;
+}
+.portafolio ul {
+    font-size: 20px;
+    color: white;
+    margin: 40px;
+}
+.portafolio ul li {
+    margin: 10px;
+}
+.skills-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
