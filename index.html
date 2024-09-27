@@ -5,29 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portafolio</title>
         <link rel="stylesheet" href="./styles.css">
-        <script src="./portafolio.js"></script>
     </head>
     <body>
         <div class="navbar">
-            <button id="abt">About me</button>
-            <button id="skills">Skills</button>
-            <button id="courses">Courses</button>
-            <button id="projects">Projects</button>
-            <button id="contact">Contact</button>
+            <button id="abt" onclick="scrollToSection('1')">About me</button>
+            <button id="skills" onclick="scrollToSection('2')">Skills</button>
+            <button id="courses" onclick="scrollToSection('3')">Education</button>
+            <button id="projects" onclick="scrollToSection('4')">Projects</button>
+            <button id="contact" onclick="scrollToSection('5')">Contact</button>
         </div>
         <div class="portafolio">
-            <div class="about">
+            <div class="about" id="1">
                 <div class="imagen">
-                    <img src="https://i.postimg.cc/T3THGw8W/Daniel.jpg" class="img">
+                    <p>Carlos Daniel Arenas</p>
+                    <img src="https://i.postimg.cc/PJJbcYM2/imagen-2024-09-27-160606320.png" class="img">
+                    <p>DanielarenasL <br>BackEnd Developer</p>
                 </div>
                 <div class="presentation">
                     <h1>About me</h1>
-                    <p>Hi my name is Daniel I'm a 20 years old Software Developer from Colombia, I'm in 5ft semester of Technology in Software Development in the UTP. I like the BackEnd, im a friendly, proactive, honest, fast learning. I've a B2 English</p>
+                    <p>Hi my name is Daniel I'm a 20 years old Software Developer from Colombia, I'm in 5ft semester of Technology in Software Development in the UTP. I like the BackEnd, im a friendly, proactive, honest, fast learning person. I've a B2 English, I like English music, read and learn new things</p>
                     
                 </div>
             </div>
             <h1>Skills</h1>
-            <div class="skills">
+            <div class="skills" id="2">
                 <div class="skills-container">
                     <div class="db">
                         <h2>Data Bases</h2>
@@ -56,10 +57,78 @@
                     </div>
                 </div>
             </div>
-            <div class="courses">
-                <h1>Courses</h1>
-                
+            <div class="courses" id="3">
+                <h1>Education</h1>
+                <div class="documents">
+                    <ul>
+                        <li>Python Esessentials 1: a course of Cisco Networking Academy,<br> its a course about basic/intermediate Python.<a href="https://drive.google.com/file/d/1heFhdt--Q6OcdDBSOCno1ZosswE6wtKn/view?usp=drive_link" target="_blank">  download certificate</a></li>
+                        <li>Technology in Software Development: as i said im in 5ft Semester<br> of Technology in Software Development I'm studying in the UTP</li>
+                        <li>English: I've a B2 English i learned it in highschool and the UTP. <br>But i'm always learning more by reading things in english.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="projects" id="4">
+                <h1>Projects</h1>
+                <div class="projects-container">
+                    <div class="project">
+                        <h2>Tienda de ropa LosPerchas</h2>
+                        <div class="image-container">
+                            <img src="https://i.postimg.cc/fyz93WN0/imagen-2024-09-27-135850510.png">
+                            <a href="https://github.com/Oconer49/Tienda-de-ropa-LosPerchas/tree/297e4fad096cc377c5d6d7a635e2e9254db92cc4" target="_blank">
+                                <div class="projecthover">
+                                    <p>it's a online store of clothes it uses MongoDB as database, python for BackEnd, flask as framework, HTML and CSS</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h2>FakeApi</h2>
+                        <div class="image-container">
+                            <img src="https://i.postimg.cc/DyXbQ9tS/imagen-2024-09-27-143623596.png">
+                            <a href="" target="_blank">
+                                <div class="projecthover">
+                                    <p>it's a project that uses a FakeApi to make a CRUD of clothes it uses HTML, CSS and JavaScript</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-container">
+                    <div class="project">
+                        <h2>Fight Game</h2>
+                        <div class="image-container">
+                            <img src="https://i.postimg.cc/HngLWYCq/imagen-2024-09-27-144629531.png">
+                            <a href="" target="_blank">
+                                <div class="projecthover">
+                                    <p>It's a fight game made only with python, it uses events that are procesed by the game using a library named 'Pygame'</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Contact" id="5">
+                <h1>Social</h1>
+                <div class="social">
+                    <a href="https://github.com/DanielarenasL" target="_blank">
+                        <img src="https://i.postimg.cc/sX5yVmhn/imagen-2024-09-27-153415319-removebg-preview.png" alt="">
+                    </a>
+                    <a href="https://open.spotify.com/user/31ft2psfoj4j7irwgvbhlqtsh5x4?si=OE66dGcyRj6bQGRBpH556A" target="_blank">
+                        <img src="https://i.postimg.cc/4NF9Hvyf/imagen-2024-09-27-153814222-removebg-preview.png">
+                    </a>
+                    <a href="https://www.instagram.com/madtrigcrew?igsh=MWtoaGlwOTBrOGp6OQ==" target="_blank">
+                        <img src="https://i.postimg.cc/zG2MbQZd/imagen-2024-09-27-154551791.png">
+                    </a>
+                </div>
+                <div class="basic">
+                    <p>Number: +57 312 5599522<br>Email: d.arenaslop3z@gmail.com</p>
+                </div>
             </div>
         </div>
+        <script>
+            function scrollToSection(sectionId) {
+                document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+            }
+        </script>
     </body>
 </html>

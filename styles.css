@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     display: flex;
     justify-content: center;
@@ -22,6 +25,7 @@ body {
     top: 0;
     background-color: rgb(101, 30, 107);
     border-radius: 15px;
+    z-index: 1000;
 }
 button {
     border: none;
@@ -49,6 +53,14 @@ button:hover {
     margin: 60px;
     height: 20em;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.imagen p {
+    color: white;
+    font-size: 20px;
+    margin: 20px;
 }
 .img {
     cursor: pointer;
@@ -96,9 +108,8 @@ button:hover {
 }
 .portafolio h2 {
     display: flex;
-    justify-content: left;
+
     color: white;
-    margin-left: 70px;
     margin-top: 20px;
     font-size: 30px;
 }
@@ -109,9 +120,103 @@ button:hover {
 }
 .portafolio ul li {
     margin: 10px;
+
 }
 .skills-container {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+    
+}
+.skills-container h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+.projects-container {
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    height: 20em;
+    justify-content: center;
+}
+
+.project h2 {
+    display: flex;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+}
+    
+.project img {
+    width: 24em;
+    height: 13em;
+    border-radius: 10px;
+}
+.project .image-container {
+    position: relative;
+    width: 24em;
+    height: 13em;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.project img {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+.project .projecthover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.project .image-container:hover .projecthover {
+    opacity: 1;
+}
+.project .projecthover p {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    width: 70%;
+}
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 5em;
+    background-color: rgb(119, 115, 115);
+}
+.social img {
+    width: 5em;
+    height: 5em;
+    height: auto;
+    margin-left: 7px;
+}
+.Contact p {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.basic {
+    display: flex;
+    justify-content: left;
+    margin: 40px;
 }
