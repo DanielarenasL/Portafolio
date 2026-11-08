@@ -1,166 +1,520 @@
-
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portafolio</title>
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <div class="navbar">
-            <button id="abt" onclick="scrollToSection('1')">About me</button>
-            <button id="skills" onclick="scrollToSection('2')">Skills</button>
-            <button id="courses" onclick="scrollToSection('3')">Education</button>
-            <button id="projects" onclick="scrollToSection('4')">Experience</button>
-            <button id="projects" onclick="scrollToSection('5')">Projects</button>
-            <button id="contact" onclick="scrollToSection('6')">Contact</button>
-        </div>
-        <div class="portafolio">
-            <div class="about" id="1">
-                <div class="imagen">
-                    <p> <strong>Carlos Daniel Arenas</strong></p>
-                    <img src="https://i.postimg.cc/PJJbcYM2/imagen-2024-09-27-160606320.png" class="img">     
-                    <p>DanielarenasL <br>BackEnd Developer</p>
-                </div>
-                <div class="presentation">
-                    <p>Hi my name is Daniel I'm a 20 years old Software Developer from Colombia, I'm in 7th semester of Technology in Software Development in the UTP. I'm Backend, I'm proactive, honest, a fast learning person. I've a B2 English, I like English music, read and learn new things</p>
-                    
-                </div>
-            </div>
-            <h1>Skills</h1>
-            <div class="skills" id="2">
-                <div class="skills-container">
-                    <div class="db">
-                        <h2>Data Bases</h2>
-                        <ul>
-                            <li>MongoDB</li>
-                            <li>MySQL</li>
-                            <li>SQL Server</li>
-                        </ul>
-                    </div>
-                    <div class="Languages">
-                        <h2>Program Languages</h2>
-                        <ul>
-                            <li>Python</li>
-                            <li>JavaScript</li>
-                            <li>C#</li>
-                        </ul>
-                    </div>
-                    <div class="Tools">
-                        <h2>Tools</h2>
-                        <ul>
-                            <li>Git</li>
-                            <li>Github</li>
-                            <li>MongoDB Atlas</li>
-                            <li>HTML/CSS</li>
-                        </ul>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio profesional de Carlos Daniel Arenas López, desarrollador de software Full Stack.">
+    <title>Carlos Daniel Arenas López | Desarrollador Full Stack</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .language-switch {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 8px;
+            padding: 5px;
+            border: 1px solid var(--border, rgba(148, 163, 184, .16));
+            border-radius: 9px;
+        }
+        .language-switch button {
+            border: 0;
+            background: transparent;
+            color: var(--muted, #a3b1c6);
+            padding: 7px 10px;
+            border-radius: 6px;
+            font: inherit;
+            font-size: .82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+        }
+        .language-switch button.active {
+            background: var(--primary, #38bdf8);
+            color: #082032;
+        }
+        @media (max-width: 950px) {
+            .language-switch { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#inicio" class="logo">Portafolio<span>.</span></a>
+            <div class="nav-links">
+                <a href="#inicio" data-i18n="nav_home">Inicio</a>
+                <a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a>
+                <a href="#habilidades" data-i18n="nav_skills">Habilidades</a>
+                <a href="#experiencia" data-i18n="nav_experience">Experiencia</a>
+                <a href="#formacion" data-i18n="nav_education">Formación</a>
+                <a href="#proyectos" data-i18n="nav_projects">Proyectos</a>
+                <a href="#contacto" class="nav-contact" data-i18n="nav_contact">Contacto</a>
+                <div class="language-switch" aria-label="Language selector">
+                    <button type="button" class="active" data-lang="es" aria-pressed="true">ES</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
                 </div>
             </div>
-            <div class="courses" id="3">
-                <h1>Education</h1>
-                <div class="documents">
-                    <ul>
-                        <li>Python Esessentials 1: a course of Cisco Networking Academy,<br> its a course about basic/intermediate Python.<a href="https://drive.google.com/file/d/1heFhdt--Q6OcdDBSOCno1ZosswE6wtKn/view?usp=drive_link" target="_blank">  download certificate</a></li>
-                        <li>Technology in Software Development: I'm in 7th Semester<br> of Technology in Software Development, I'm studying in the UTP</li>
-                        <li>English: I've a B2 English i learned it in highschool and UTP. <br>But i'm always learning more by reading things in english.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="experience" id="4">
-                <h1>Experience</h1>
-                <div class="documents">
-                    <ul>
-                        <li> <strong>Coats Cadena Andina</strong><br><br><strong>  Languages:</strong> C#, JavaScript <br><strong>Boss: </strong>Julian Correa +57 3106843878 <br><strong>Time: </strong>December 2024 - July 2025</li>
+        </nav>
+    </header>
 
-                    </ul>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow" data-i18n="hero_eyebrow">DESARROLLADOR DE SOFTWARE</span>
+                <h1>Carlos Daniel<br><span>Arenas López</span></h1>
+                <h2 data-i18n="hero_role">Desarrollador de Software Full Stack</h2>
+                <p data-i18n="hero_intro">
+                    Tecnólogo en Desarrollo de Software y estudiante de Ingeniería de Sistemas,
+                    enfocado en crear soluciones web eficientes, escalables y funcionales.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary" data-i18n="hero_projects">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-outline" data-i18n="hero_contact">Contactarme</a>
+                </div>
+                <div class="hero-location">
+                    <span data-i18n="location">📍 Pereira, Risaralda, Colombia</span>
+                    <span>✉ d.arenaslop3z@gmail.com</span>
                 </div>
             </div>
-            <div class="projects" id="5">
-                <h1>Projects</h1>
-                <div class="projects-container">
-                    <div class="project">
-                        <h2>Tienda de ropa LosPerchas</h2>
-                        <div class="image-container">
-                            <img src="https://i.postimg.cc/fyz93WN0/imagen-2024-09-27-135850510.png">
-                            <a href="https://tienda-de-ropa-losperchas.onrender.com/" target="_blank">
-                                <div class="projecthover">
-                                    <p>it's a online store of clothes it uses MongoDB as database, python for BackEnd, flask as framework, HTML and CSS</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <h2>FakeApi</h2>
-                        <div class="image-container">
-                            <img src="https://i.postimg.cc/DyXbQ9tS/imagen-2024-09-27-143623596.png">
-                            <a href="https://danielarenasl.github.io/JavaScript/" target="_blank">
-                                <div class="projecthover">
-                                    <p>it's a project that uses a FakeApi to make a CRUD of clothes it uses HTML, CSS and JavaScript</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+            <div class="hero-image">
+                <div class="image-decoration"></div>
+                <img src="./foto.png" alt="Fotografía de Carlos Daniel Arenas López" data-i18n-attr="alt:photo_alt">
+            </div>
+        </section>
+
+        <section class="section" id="sobre-mi">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="about_eyebrow">CONÓCEME</span>
+                <h2 data-i18n="about_title">Resumen profesional</h2>
+            </div>
+            <div class="about-content">
+                <p data-i18n="about_p1">
+                    Desarrollador Full Stack y Tecnólogo en Desarrollo de Software, actualmente
+                    cursando quinto semestre de Ingeniería de Sistemas en la Universidad
+                    Tecnológica de Pereira. Cuento con experiencia en desarrollo web, evolución
+                    de plataformas, soporte técnico y arquitectura de software.
+                </p>
+                <p data-i18n="about_p2">
+                    Tengo conocimientos en tecnologías frontend y backend como PHP (Laravel),
+                    JavaScript (React), Python y administración de bases de datos relacionales
+                    y no relacionales, entre ellas MySQL, PostgreSQL y MongoDB.
+                </p>
+                <p data-i18n="about_p3">
+                    Me caracterizo por la resolución eficiente de problemas, la disciplina
+                    operativa, la adaptabilidad y el aprendizaje continuo. Busco aportar
+                    soluciones tecnológicas que respondan a necesidades reales y generen valor.
+                </p>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight">
+                    <span class="highlight-number">Full Stack</span>
+                    <span data-i18n="highlight_profile">Perfil de desarrollo</span>
                 </div>
-                <div class="projects-container">
-                    <div class="project">
-                        <h2>Fight Game</h2>
-                        <div class="image-container">
-                            <img src="https://i.postimg.cc/HngLWYCq/imagen-2024-09-27-144629531.png">
-                            <a href="https://danielarenasl.github.io/JavaScript/" target="_blank">
-                                <div class="projecthover">
-                                    <p>It's a fight game made only with python, it uses events that are procesed by the game using a library named 'Pygame'</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <h2>Memorie Game</h2>
-                        <div class="image-container">
-                            <img src="https://i.postimg.cc/s29QQcxp/image.png" >
-                            <a href="https://finaljs-vlk0.onrender.com/" target="_blank">
-                                <div class="projecthover">
-                                    <p>It's a Memorie game made with HTML, JavaScript, CSS, and React, it has local storage that save the score of the player</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <h2>Cine LosPerchas</h2>
-                        <div class="image-container">
-                            <img src="https://i.postimg.cc/mZpjdK0N/imagen-2025-07-03-124100432.png" >
-                            <a href="https://sistema-cine.vercel.app" target="_blank">
-                                <div class="projecthover">
-                                    <p>It's a Cynema System made with HTML, JavaScript and MongoDB, it's hosted in Vercel</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="highlight">
+                    <span class="highlight-number">B2</span>
+                    <span data-i18n="highlight_english">Inglés certificado</span>
+                </div>
+                <div class="highlight">
+                    <span class="highlight-number">UTP</span>
+                    <span data-i18n="highlight_education">Formación universitaria</span>
                 </div>
             </div>
-            <div class="Contact" id="6">
-                <h1>Social</h1>
-                <div class="social">
-                    <a href="https://github.com/DanielarenasL" target="_blank">
-                        <img src="https://i.postimg.cc/sX5yVmhn/imagen-2024-09-27-153415319-removebg-preview.png" alt="">
-                    </a>
-                    <a href="https://open.spotify.com/user/31ft2psfoj4j7irwgvbhlqtsh5x4?si=OE66dGcyRj6bQGRBpH556A" target="_blank">
-                        <img src="https://i.postimg.cc/4NF9Hvyf/imagen-2024-09-27-153814222-removebg-preview.png">
-                    </a>
-                    <a href="https://www.instagram.com/madtrigcrew?igsh=MWtoaGlwOTBrOGp6OQ==" target="_blank">
-                        <img src="https://i.postimg.cc/zG2MbQZd/imagen-2024-09-27-154551791.png">
-                    </a>
+        </section>
+
+        <section class="section section-dark" id="habilidades">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="skills_eyebrow">MI PERFIL</span>
+                <h2 data-i18n="skills_title">Habilidades</h2>
+                <p data-i18n="skills_subtitle">Conocimientos técnicos y competencias profesionales.</p>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <div class="skill-icon">⌨</div>
+                    <h3 data-i18n="skill_programming">Lenguajes de programación</h3>
+                    <div class="tags"><span>PHP</span><span>JavaScript</span><span>Python</span></div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-icon">⚙</div>
+                    <h3 data-i18n="skill_frameworks">Frameworks y librerías</h3>
+                    <div class="tags"><span>Laravel</span><span>React</span><span>Pygame</span></div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-icon">▤</div>
+                    <h3 data-i18n="skill_databases">Bases de datos</h3>
+                    <div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span></div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-icon">⌘</div>
+                    <h3 data-i18n="skill_tools">Herramientas y tecnologías</h3>
+                    <div class="tags"><span>Git</span><span>GitHub</span><span>Bitbucket</span><span>APIs REST</span></div>
+                </article>
+                <article class="skill-card soft-skills">
+                    <div class="skill-icon">✦</div>
+                    <h3 data-i18n="skill_soft">Habilidades blandas</h3>
+                    <div class="tags">
+                        <span data-i18n="soft_organization">Organización</span>
+                        <span data-i18n="soft_planning">Planificación</span>
+                        <span data-i18n="soft_communication">Comunicación</span>
+                        <span data-i18n="soft_teamwork">Trabajo en equipo</span>
+                        <span data-i18n="soft_adaptability">Adaptabilidad</span>
+                        <span data-i18n="soft_selfmanagement">Autogestión</span>
+                        <span data-i18n="soft_productivity">Productividad</span>
+                        <span data-i18n="soft_pressure">Trabajo bajo presión</span>
+                    </div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-icon">▣</div>
+                    <h3 data-i18n="skill_other">Otros conocimientos</h3>
+                    <div class="tags">
+                        <span data-i18n="other_fullstack">Desarrollo Full Stack</span>
+                        <span data-i18n="other_support">Soporte de software</span>
+                        <span data-i18n="other_maintenance">Mantenimiento de equipos</span>
+                        <span data-i18n="other_remote">Herramientas remotas</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="experiencia">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="experience_eyebrow">TRAYECTORIA</span>
+                <h2 data-i18n="experience_title">Experiencia laboral</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-date" data-i18n="experience_date">Octubre 2025 — Octubre 2026</div>
+                    <div class="timeline-content">
+                        <span class="experience-type" data-i18n="professional_experience">EXPERIENCIA PROFESIONAL</span>
+                        <h3 data-i18n="fullstack_developer">Desarrollador Full Stack</h3>
+                        <h4>Logosmart S.A.S.</h4>
+                        <ul>
+                            <li data-i18n="job_backend"><strong>Desarrollo Backend y Frontend:</strong> diseño e implementación de nuevas funcionalidades en plataformas existentes y creación de sitios web desde cero, optimizando la experiencia de usuario y el rendimiento del servidor.</li>
+                            <li data-i18n="job_apis"><strong>Integración y consumo de APIs:</strong> desarrollo e integración de servicios RESTful para conectar módulos internos con servicios de terceros.</li>
+                            <li data-i18n="job_support"><strong>Mantenimiento y soporte:</strong> diagnóstico y resolución de incidencias en aplicaciones web de producción, contribuyendo a la continuidad operativa del software.</li>
+                            <li data-i18n="job_team"><strong>Trabajo colaborativo:</strong> participación en el ciclo de vida del desarrollo mediante herramientas de control de versiones como Git y Bitbucket.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-date" data-i18n="previous_date">Diciembre 2024 — Julio 2025</div>
+                    <div class="timeline-content">
+                        <span class="experience-type" data-i18n="previous_experience">EXPERIENCIA ANTERIOR</span>
+                        <h3 data-i18n="coats_experience">Experiencia en Coats Cadena Andina</h3>
+                        <h4>Coats Cadena Andina</h4>
+                        <p data-i18n="coats_description">Experiencia previa con tecnologías como C# y JavaScript.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="formacion">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="education_eyebrow">MI EDUCACIÓN</span>
+                <h2 data-i18n="education_title">Formación académica</h2>
+            </div>
+            <div class="education-grid">
+                <article class="education-card">
+                    <span class="education-year">2021</span>
+                    <h3 data-i18n="high_school">Bachiller Académico</h3>
+                    <p>Liceo Reynel</p>
+                </article>
+                <article class="education-card">
+                    <span class="education-year">2025</span>
+                    <h3 data-i18n="software_technology">Tecnología en Desarrollo de Software</h3>
+                    <p>Universidad Tecnológica de Pereira</p>
+                </article>
+                <article class="education-card">
+                    <span class="education-year" data-i18n="present">Actualidad</span>
+                    <h3 data-i18n="systems_engineering">Ingeniería de Sistemas</h3>
+                    <p>Universidad Tecnológica de Pereira</p>
+                    <span class="education-detail" data-i18n="fifth_semester">Quinto semestre</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="proyectos">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="projects_eyebrow">TRABAJO REALIZADO</span>
+                <h2 data-i18n="projects_title">Proyectos destacados</h2>
+                <p data-i18n="projects_subtitle">Algunos proyectos personales y académicos.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image"><img src="https://i.postimg.cc/fyz93WN0/imagen-2024-09-27-135850510.png" alt="Tienda de ropa LosPerchas"></div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="category_web">DESARROLLO WEB</span>
+                        <h3>Tienda de ropa LosPerchas</h3>
+                        <p data-i18n="project_store">Tienda virtual de ropa con backend desarrollado en Python y Flask, base de datos MongoDB e interfaz construida con HTML y CSS.</p>
+                        <div class="tags"><span>Python</span><span>Flask</span><span>MongoDB</span></div>
+                        <a href="https://tienda-de-ropa-losperchas.onrender.com/" target="_blank" rel="noopener noreferrer" data-i18n="view_project">Ver proyecto ↗</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"><img src="https://i.postimg.cc/DyXbQ9tS/imagen-2024-09-27-143623596.png" alt="Proyecto FakeApi"></div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="category_webapp">APLICACIÓN WEB</span>
+                        <h3>FakeApi</h3>
+                        <p data-i18n="project_fakeapi">Aplicación que consume una Fake API para realizar operaciones CRUD sobre productos de una tienda de ropa.</p>
+                        <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>API</span></div>
+                        <a href="https://danielarenasl.github.io/JavaScript/" target="_blank" rel="noopener noreferrer" data-i18n="view_project">Ver proyecto ↗</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"><img src="https://i.postimg.cc/HngLWYCq/imagen-2024-09-27-144629531.png" alt="Juego de combate"></div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="category_games">DESARROLLO DE VIDEOJUEGOS</span>
+                        <h3>Fight Game</h3>
+                        <p data-i18n="project_fight">Juego de combate desarrollado en Python utilizando Pygame para gestionar eventos, lógica de juego e interacción.</p>
+                        <div class="tags"><span>Python</span><span>Pygame</span></div>
+                        <a href="https://danielarenasl.github.io/JavaScript/" target="_blank" rel="noopener noreferrer" data-i18n="view_project">Ver proyecto ↗</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"><img src="https://i.postimg.cc/s29QQcxp/image.png" alt="Juego de memoria"></div>
+                    <div class="project-info">
+                        <span class="project-category">FRONTEND</span>
+                        <h3>Memory Game</h3>
+                        <p data-i18n="project_memory">Juego de memoria desarrollado con React, JavaScript, HTML y CSS. Utiliza almacenamiento local para conservar las puntuaciones.</p>
+                        <div class="tags"><span>React</span><span>JavaScript</span><span>CSS</span></div>
+                        <a href="https://finaljs-vlk0.onrender.com/" target="_blank" rel="noopener noreferrer" data-i18n="view_project">Ver proyecto ↗</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"><img src="https://i.postimg.cc/mZpjdK0N/imagen-2025-07-03-124100432.png" alt="Sistema de cine LosPerchas"></div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="category_system">SISTEMA WEB</span>
+                        <h3>Cine LosPerchas</h3>
+                        <p data-i18n="project_cinema">Sistema web de cine desarrollado con HTML, JavaScript y MongoDB, enfocado en la gestión de funcionalidades de una plataforma de cine.</p>
+                        <div class="tags"><span>JavaScript</span><span>HTML</span><span>MongoDB</span></div>
+                        <a href="https://sistema-cine.vercel.app" target="_blank" rel="noopener noreferrer" data-i18n="view_project">Ver proyecto ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="idiomas">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="languages_eyebrow">COMUNICACIÓN</span>
+                <h2 data-i18n="languages_title">Idiomas</h2>
+            </div>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <div><h3 data-i18n="spanish">Español</h3><p data-i18n="native">Nativo</p></div>
+                    <span class="language-level" data-i18n="native">Nativo</span>
                 </div>
-                <div class="basic">
-                    <p>Number: +57 312 5599522<br>Email: d.arenaslop3z@gmail.com</p>
+                <div class="language-card">
+                    <div><h3 data-i18n="english">Inglés</h3><p data-i18n="intermediate_advanced">Intermedio - Avanzado</p></div>
+                    <span class="language-level">B2 · <span data-i18n="certified">Certificado</span></span>
                 </div>
             </div>
-        </div>
-        <script>
-            function scrollToSection(sectionId) {
-                document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+        </section>
+
+        <section class="section" id="referencias">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="references_eyebrow">RECOMENDACIONES</span>
+                <h2 data-i18n="references_title">Referencias</h2>
+            </div>
+            <div class="references-grid">
+                <article class="reference-card">
+                    <span class="reference-type" data-i18n="work_reference">REFERENCIA LABORAL</span>
+                    <h3>Daniel Cuartas</h3>
+                    <p>PM · Logosmart S.A.S.</p>
+                    <a href="mailto:daniel.cuartas@logossmart.com">daniel.cuartas@logossmart.com</a>
+                </article>
+                <article class="reference-card">
+                    <span class="reference-type" data-i18n="personal_reference">REFERENCIA PERSONAL</span>
+                    <h3>Brahyan Uribe</h3>
+                    <p data-i18n="software_developer">Desarrollador de Software</p>
+                    <a href="tel:+573168766361">316 876 6361</a>
+                </article>
+                <article class="reference-card">
+                    <span class="reference-type" data-i18n="personal_reference">REFERENCIA PERSONAL</span>
+                    <h3>Annie Osorio</h3>
+                    <p data-i18n="accountant">Contadora</p>
+                    <a href="tel:+573122198719">312 219 8719</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <span class="eyebrow" data-i18n="contact_eyebrow">HABLEMOS</span>
+            <h2 data-i18n="contact_title">¿Tienes un proyecto en mente?</h2>
+            <p data-i18n="contact_text">Estoy abierto a nuevas oportunidades, proyectos y colaboraciones en desarrollo de software.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=d.arenaslop3z@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="send_email">Enviar un correo</a>
+            <div class="contact-links">
+                <a href="https://github.com/DanielarenasL" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=d.arenaslop3z@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+                <a href="tel:+573125599522">312 559 9522</a>
+            </div>
+            <p class="footer-location" data-i18n="footer_location">Pereira, Risaralda · Colombia</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="copyright">© 2026 Carlos Daniel Arenas López. Todos los derechos reservados.</p>
+        <a href="#inicio" data-i18n="back_top">Volver arriba ↑</a>
+    </footer>
+
+    <script>
+        const translations = {
+            es: {
+                nav_home:"Inicio", nav_about:"Sobre mí", nav_skills:"Habilidades",
+                nav_experience:"Experiencia", nav_education:"Formación", nav_projects:"Proyectos",
+                nav_contact:"Contacto", hero_eyebrow:"DESARROLLADOR DE SOFTWARE",
+                hero_role:"Desarrollador de Software Full Stack",
+                hero_intro:"Tecnólogo en Desarrollo de Software y estudiante de Ingeniería de Sistemas, enfocado en crear soluciones web eficientes, escalables y funcionales.",
+                hero_projects:"Ver proyectos", hero_contact:"Contactarme",
+                location:"📍 Pereira, Risaralda, Colombia", photo_alt:"Fotografía de Carlos Daniel Arenas López",
+                about_eyebrow:"CONÓCEME", about_title:"Resumen profesional",
+                about_p1:"Desarrollador Full Stack y Tecnólogo en Desarrollo de Software, actualmente cursando quinto semestre de Ingeniería de Sistemas en la Universidad Tecnológica de Pereira. Cuento con experiencia en desarrollo web, evolución de plataformas, soporte técnico y arquitectura de software.",
+                about_p2:"Tengo conocimientos en tecnologías frontend y backend como PHP (Laravel), JavaScript (React), Python y administración de bases de datos relacionales y no relacionales, entre ellas MySQL, PostgreSQL y MongoDB.",
+                about_p3:"Me caracterizo por la resolución eficiente de problemas, la disciplina operativa, la adaptabilidad y el aprendizaje continuo. Busco aportar soluciones tecnológicas que respondan a necesidades reales y generen valor.",
+                highlight_profile:"Perfil de desarrollo", highlight_english:"Inglés certificado", highlight_education:"Formación universitaria",
+                skills_eyebrow:"MI PERFIL", skills_title:"Habilidades", skills_subtitle:"Conocimientos técnicos y competencias profesionales.",
+                skill_programming:"Lenguajes de programación", skill_frameworks:"Frameworks y librerías",
+                skill_databases:"Bases de datos", skill_tools:"Herramientas y tecnologías",
+                skill_soft:"Habilidades blandas", skill_other:"Otros conocimientos",
+                soft_organization:"Organización", soft_planning:"Planificación", soft_communication:"Comunicación",
+                soft_teamwork:"Trabajo en equipo", soft_adaptability:"Adaptabilidad", soft_selfmanagement:"Autogestión",
+                soft_productivity:"Productividad", soft_pressure:"Trabajo bajo presión",
+                other_fullstack:"Desarrollo Full Stack", other_support:"Soporte de software",
+                other_maintenance:"Mantenimiento de equipos", other_remote:"Herramientas remotas",
+                experience_eyebrow:"TRAYECTORIA", experience_title:"Experiencia laboral",
+                experience_date:"Octubre 2025 — Octubre 2026", professional_experience:"EXPERIENCIA PROFESIONAL",
+                fullstack_developer:"Desarrollador Full Stack",
+                job_backend:"Desarrollo Backend y Frontend: diseño e implementación de nuevas funcionalidades en plataformas existentes y creación de sitios web desde cero, optimizando la experiencia de usuario y el rendimiento del servidor.",
+                job_apis:"Integración y consumo de APIs: desarrollo e integración de servicios RESTful para conectar módulos internos con servicios de terceros.",
+                job_support:"Mantenimiento y soporte: diagnóstico y resolución de incidencias en aplicaciones web de producción, contribuyendo a la continuidad operativa del software.",
+                job_team:"Trabajo colaborativo: participación en el ciclo de vida del desarrollo mediante herramientas de control de versiones como Git y Bitbucket.",
+                previous_date:"Diciembre 2024 — Julio 2025", previous_experience:"EXPERIENCIA ANTERIOR",
+                coats_experience:"Experiencia en Coats Cadena Andina",
+                coats_description:"Experiencia previa con tecnologías como C# y JavaScript.",
+                education_eyebrow:"MI EDUCACIÓN", education_title:"Formación académica",
+                high_school:"Bachiller Académico", software_technology:"Tecnología en Desarrollo de Software",
+                present:"Actualidad", systems_engineering:"Ingeniería de Sistemas", fifth_semester:"Quinto semestre",
+                projects_eyebrow:"TRABAJO REALIZADO", projects_title:"Proyectos destacados",
+                projects_subtitle:"Algunos proyectos personales y académicos.",
+                category_web:"DESARROLLO WEB", category_webapp:"APLICACIÓN WEB",
+                category_games:"DESARROLLO DE VIDEOJUEGOS", category_system:"SISTEMA WEB",
+                project_store:"Tienda virtual de ropa con backend desarrollado en Python y Flask, base de datos MongoDB e interfaz construida con HTML y CSS.",
+                project_fakeapi:"Aplicación que consume una Fake API para realizar operaciones CRUD sobre productos de una tienda de ropa.",
+                project_fight:"Juego de combate desarrollado en Python utilizando Pygame para gestionar eventos, lógica de juego e interacción.",
+                project_memory:"Juego de memoria desarrollado con React, JavaScript, HTML y CSS. Utiliza almacenamiento local para conservar las puntuaciones.",
+                project_cinema:"Sistema web de cine desarrollado con HTML, JavaScript y MongoDB, enfocado en la gestión de funcionalidades de una plataforma de cine.",
+                view_project:"Ver proyecto ↗", languages_eyebrow:"COMUNICACIÓN", languages_title:"Idiomas",
+                spanish:"Español", native:"Nativo", english:"Inglés",
+                intermediate_advanced:"Intermedio - Avanzado", certified:"Certificado",
+                references_eyebrow:"RECOMENDACIONES", references_title:"Referencias",
+                work_reference:"REFERENCIA LABORAL", personal_reference:"REFERENCIA PERSONAL",
+                software_developer:"Desarrollador de Software", accountant:"Contadora",
+                contact_eyebrow:"HABLEMOS", contact_title:"¿Tienes un proyecto en mente?",
+                contact_text:"Estoy abierto a nuevas oportunidades, proyectos y colaboraciones en desarrollo de software.",
+                send_email:"Enviar un correo", footer_location:"Pereira, Risaralda · Colombia",
+                copyright:"© 2026 Carlos Daniel Arenas López. Todos los derechos reservados.",
+                back_top:"Volver arriba ↑"
+            },
+            en: {
+                nav_home:"Home", nav_about:"About me", nav_skills:"Skills",
+                nav_experience:"Experience", nav_education:"Education", nav_projects:"Projects",
+                nav_contact:"Contact", hero_eyebrow:"SOFTWARE DEVELOPER",
+                hero_role:"Full Stack Software Developer",
+                hero_intro:"Software Development Technologist and Systems Engineering student, focused on building efficient, scalable, and functional web solutions.",
+                hero_projects:"View projects", hero_contact:"Get in touch",
+                location:"📍 Pereira, Risaralda, Colombia", photo_alt:"Photo of Carlos Daniel Arenas López",
+                about_eyebrow:"GET TO KNOW ME", about_title:"Professional Summary",
+                about_p1:"Full Stack Developer and Software Development Technologist, currently in the fifth semester of Systems Engineering at Universidad Tecnológica de Pereira. I have experience in web development, platform evolution, technical support, and software architecture.",
+                about_p2:"I have knowledge of frontend and backend technologies such as PHP (Laravel), JavaScript (React), Python, and relational and non-relational database management, including MySQL, PostgreSQL, and MongoDB.",
+                about_p3:"I stand out for efficient problem-solving, operational discipline, adaptability, and continuous learning. I aim to deliver technology solutions that address real needs and create value.",
+                highlight_profile:"Development profile", highlight_english:"Certified English", highlight_education:"University education",
+                skills_eyebrow:"MY PROFILE", skills_title:"Skills", skills_subtitle:"Technical knowledge and professional competencies.",
+                skill_programming:"Programming Languages", skill_frameworks:"Frameworks & Libraries",
+                skill_databases:"Databases", skill_tools:"Tools & Technologies",
+                skill_soft:"Soft Skills", skill_other:"Additional Knowledge",
+                soft_organization:"Organization", soft_planning:"Planning", soft_communication:"Communication",
+                soft_teamwork:"Teamwork", soft_adaptability:"Adaptability", soft_selfmanagement:"Self-management",
+                soft_productivity:"Productivity", soft_pressure:"Working under pressure",
+                other_fullstack:"Full Stack Development", other_support:"Software Support",
+                other_maintenance:"Computer Maintenance", other_remote:"Remote Work Tools",
+                experience_eyebrow:"CAREER PATH", experience_title:"Work Experience",
+                experience_date:"October 2025 — October 2026", professional_experience:"PROFESSIONAL EXPERIENCE",
+                fullstack_developer:"Full Stack Developer",
+                job_backend:"Backend and Frontend Development: designed and implemented new features in existing platforms and built websites from scratch, improving user experience and server performance.",
+                job_apis:"API Integration and Consumption: developed and integrated RESTful services to connect internal modules with third-party services.",
+                job_support:"Maintenance and Support: diagnosed and resolved issues in production web applications, helping ensure software operational continuity.",
+                job_team:"Team Collaboration: participated in the software development lifecycle using version control tools such as Git and Bitbucket.",
+                previous_date:"December 2024 — July 2025", previous_experience:"PREVIOUS EXPERIENCE",
+                coats_experience:"Experience at Coats Cadena Andina",
+                coats_description:"Previous experience working with technologies such as C# and JavaScript.",
+                education_eyebrow:"MY EDUCATION", education_title:"Education",
+                high_school:"High School Diploma", software_technology:"Software Development Technology",
+                present:"Present", systems_engineering:"Systems Engineering", fifth_semester:"Fifth semester",
+                projects_eyebrow:"SELECTED WORK", projects_title:"Featured Projects",
+                projects_subtitle:"A selection of personal and academic projects.",
+                category_web:"WEB DEVELOPMENT", category_webapp:"WEB APPLICATION",
+                category_games:"GAME DEVELOPMENT", category_system:"WEB SYSTEM",
+                project_store:"Online clothing store with a backend developed in Python and Flask, a MongoDB database, and an interface built with HTML and CSS.",
+                project_fakeapi:"Application that consumes a Fake API to perform CRUD operations on products for a clothing store.",
+                project_fight:"Combat game developed in Python using Pygame to handle events, game logic, and interaction.",
+                project_memory:"Memory game developed with React, JavaScript, HTML, and CSS. It uses local storage to save player scores.",
+                project_cinema:"Cinema web system developed with HTML, JavaScript, and MongoDB, focused on managing the features of a cinema platform.",
+                view_project:"View project ↗", languages_eyebrow:"COMMUNICATION", languages_title:"Languages",
+                spanish:"Spanish", native:"Native", english:"English",
+                intermediate_advanced:"Intermediate - Advanced", certified:"Certified",
+                references_eyebrow:"RECOMMENDATIONS", references_title:"References",
+                work_reference:"PROFESSIONAL REFERENCE", personal_reference:"PERSONAL REFERENCE",
+                software_developer:"Software Developer", accountant:"Accountant",
+                contact_eyebrow:"LET'S TALK", contact_title:"Have a project in mind?",
+                contact_text:"I am open to new opportunities, projects, and collaborations in software development.",
+                send_email:"Send an email", footer_location:"Pereira, Risaralda · Colombia",
+                copyright:"© 2026 Carlos Daniel Arenas López. All rights reserved.",
+                back_top:"Back to top ↑"
             }
-        </script>
-    </body>
+        };
+
+        function setLanguage(language) {
+            const dictionary = translations[language] || translations.es;
+
+            document.documentElement.lang = language;
+            document.querySelectorAll("[data-i18n]").forEach(element => {
+                const key = element.dataset.i18n;
+                if (dictionary[key]) element.textContent = dictionary[key];
+            });
+
+            document.querySelectorAll("[data-i18n-attr]").forEach(element => {
+                element.dataset.i18nAttr.split(",").forEach(item => {
+                    const [attribute, key] = item.split(":").map(value => value.trim());
+                    if (dictionary[key]) element.setAttribute(attribute, dictionary[key]);
+                });
+            });
+
+            document.title = language === "en"
+                ? "Carlos Daniel Arenas López | Full Stack Developer"
+                : "Carlos Daniel Arenas López | Desarrollador Full Stack";
+
+            document.querySelectorAll(".language-switch button").forEach(button => {
+                const selected = button.dataset.lang === language;
+                button.classList.toggle("active", selected);
+                button.setAttribute("aria-pressed", selected);
+            });
+
+            try {
+                localStorage.setItem("portfolio-language", language);
+            } catch (error) {
+                // The language switch still works if browser storage is unavailable.
+            }
+        }
+
+        document.querySelectorAll(".language-switch button").forEach(button => {
+            button.addEventListener("click", () => setLanguage(button.dataset.lang));
+        });
+
+        let savedLanguage = "es";
+        try {
+            savedLanguage = localStorage.getItem("portfolio-language") || "es";
+        } catch (error) {
+            savedLanguage = "es";
+        }
+        setLanguage(savedLanguage);
+    </script>
+</body>
 </html>
